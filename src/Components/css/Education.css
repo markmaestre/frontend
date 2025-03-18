@@ -1,0 +1,208 @@
+/* Education Component Styles */
+.education-container {
+  padding: 24px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.education-header {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.education-header h1 {
+  font-size: 28px;
+  color: #2e7d32;
+  margin-bottom: 8px;
+}
+
+.education-header p {
+  color: #666;
+  font-size: 16px;
+}
+
+.education-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 8px 12px;
+  width: 300px;
+}
+
+.search-box input {
+  border: none;
+  background: transparent;
+  margin-left: 8px;
+  flex-grow: 1;
+  outline: none;
+  font-size: 14px;
+}
+
+.view-toggles {
+  display: flex;
+  gap: 8px;
+}
+
+.view-toggle {
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.view-toggle.active {
+  background-color: #e8f5e9;
+  border-color: #2e7d32;
+  color: #2e7d32;
+}
+
+.category-tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.category-tab {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  background-color: #f5f5f5;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.category-tab.active {
+  background-color: #2e7d32;
+  color: white;
+}
+
+/* Grid View */
+.education-items.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+/* List View */
+.education-items.list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.education-items.list .education-card {
+  display: flex;
+  height: 140px;
+}
+
+.education-items.list .card-image {
+  width: 200px;
+  flex-shrink: 0;
+}
+
+.education-items.list .card-content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Card Styles */
+.education-card {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.education-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-image {
+  height: 160px;
+  position: relative;
+  overflow: hidden;
+}
+
+.education-items.list .card-image {
+  height: 100%;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.category-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+.education-card.hazardous .category-badge {
+  background-color: #f44336;
+  color: white;
+}
+
+.education-card.non-hazardous .category-badge {
+  background-color: #00bfa6;
+  color: white;
+}
+
+.card-content {
+  padding: 16px;
+}
+
+.card-content h3 {
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.card-content p {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+.learn-more-btn {
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.learn-more-btn:hover {
+  background-color: #1b5e20;
+}
+
+.no-results {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+}

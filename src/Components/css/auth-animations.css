@@ -1,0 +1,257 @@
+/* Float animation with more dramatic movement */
+@keyframes auth-float {
+    0% {
+      transform: translateY(0) translateX(0) rotate(0deg);
+    }
+    25% {
+      transform: translateY(-20px) translateX(15px) rotate(2deg);
+    }
+    50% {
+      transform: translateY(5px) translateX(25px) rotate(-1deg);
+    }
+    75% {
+      transform: translateY(18px) translateX(-10px) rotate(3deg);
+    }
+    100% {
+      transform: translateY(0) translateX(0) rotate(0deg);
+    }
+  }
+  
+  /* Add a pulse animation for interactive elements */
+  @keyframes auth-pulse {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 5px 15px var(--auth-shadow-color);
+    }
+    50% {
+      transform: scale(1.03);
+      box-shadow: 0 10px 25px var(--auth-shadow-color);
+    }
+    100% {
+      transform: scale(1);
+      box-shadow: 0 5px 15px var(--auth-shadow-color);
+    }
+  }
+  
+  /* Create a more energetic rotation */
+  @keyframes auth-rotate {
+    0% {
+      transform: rotate(0deg) scale(1);
+    }
+    25% {
+      transform: rotate(90deg) scale(1.05);
+    }
+    50% {
+      transform: rotate(180deg) scale(1);
+    }
+    75% {
+      transform: rotate(270deg) scale(1.05);
+    }
+    100% {
+      transform: rotate(360deg) scale(1);
+    }
+  }
+  
+  /* Add a shimmer effect for gradients */
+  @keyframes auth-shimmer {
+    0% {
+      background-position: -100% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+  
+  /* Add a subtle bounce for form elements */
+  @keyframes auth-bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-10px);
+    }
+    60% {
+      transform: translateY(-5px);
+    }
+  }
+  
+  /* Apply enhanced animations to elements */
+  
+  /* Make decorative circles more lively */
+  .auth-page .circle1 {
+    animation: auth-float 8s infinite ease-in-out;
+  }
+  
+  .auth-page .circle2 {
+    animation: auth-float 12s infinite ease-in-out reverse;
+  }
+  
+  .auth-page .circle3 {
+    animation: auth-float 10s infinite ease-in-out;
+  }
+  
+  /* Make background circles more interesting */
+  .auth-page .background-circle-1 {
+    animation: auth-float 20s infinite ease-in-out;
+  }
+  
+  .auth-page .background-circle-2 {
+    animation: auth-float 25s infinite ease-in-out reverse;
+  }
+  
+  .auth-page .background-circle-3 {
+    animation: auth-float 22s infinite cubic-bezier(0.45, 0.05, 0.55, 0.95);
+  }
+  
+  .auth-page .background-circle-4 {
+    animation: auth-float 18s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse;
+  }
+  
+  /* Add subtle pulse to submit button on hover */
+  .auth-page .submit-btn:hover {
+    animation: auth-pulse 2s infinite ease-in-out;
+    box-shadow: 0 15px 30px rgba(0, 188, 212, 0.5);
+    transform: translateY(-3px);
+  }
+  
+  /* Add more dynamic gradient animation to the container */
+  .auth-page .auth-container::before {
+    animation: auth-rotate 30s linear infinite;
+    background: radial-gradient(
+      circle at center,
+      rgba(0, 188, 212, 0.05) 0%,
+      rgba(76, 175, 80, 0.05) 30%,
+      rgba(255, 255, 255, 0) 70%
+    );
+  }
+  
+  /* Add a new shimmer effect to the form title */
+  .auth-page .form-title {
+    background: linear-gradient(
+      90deg,
+      var(--auth-primary-color) 0%,
+      var(--auth-secondary-color) 30%,
+      var(--auth-primary-color) 60%,
+      var(--auth-secondary-color) 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: auth-shimmer 4s linear infinite;
+  }
+  
+  /* Add a subtle entrance animation for form fields */
+  .auth-page .form-group {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: auth-fade-in 0.5s forwards ease-out;
+  }
+  
+  @keyframes auth-fade-in {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Add staggered timing to form groups */
+  .auth-page .form-group:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  
+  .auth-page .form-group:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+  .auth-page .form-group:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  
+  /* Add hover effects for form inputs */
+  .auth-page .form-group input:hover {
+    transform: translateX(3px);
+    transition: transform 0.3s ease;
+  }
+  
+  /* Add a more dramatic focus effect */
+  .auth-page .form-group input:focus {
+    transform: scale(1.02);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  /* Add a ripple effect to toggle buttons */
+  .auth-page .toggle-btn {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .auth-page .toggle-btn:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform 0.6s, opacity 0.6s;
+  }
+  
+  .auth-page .toggle-btn:active:after {
+    transform: scale(0, 0);
+    opacity: 0.3;
+    transition: 0s;
+  }
+  
+  /* Add floating animation to the artwork */
+  .auth-page .artwork {
+    animation: auth-bounce 6s infinite ease-in-out;
+  }
+  
+  /* Add wave animation to the entire auth container */
+  @keyframes auth-wave {
+    0%, 100% {
+      border-radius: var(--auth-radius-lg);
+    }
+    50% {
+      border-radius: calc(var(--auth-radius-lg) + 5px);
+    }
+  }
+  
+  .auth-page .auth-container {
+    animation: auth-wave 10s infinite ease-in-out;
+  }
+  
+  /* Create a dynamic gradient shift for the artwork container */
+  @keyframes auth-gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .auth-page .artwork-container {
+    background: linear-gradient(
+      135deg, 
+      var(--auth-primary-color) 0%, 
+      var(--auth-secondary-color) 50%,
+      var(--auth-primary-color) 100%
+    );
+    background-size: 200% 200%;
+    animation: auth-gradient-shift 15s infinite ease;
+  }
+  
+  /* Add a subtle hover animation to the forgot password link */
+  .auth-page .forgot-password:hover {
+    animation: auth-bounce 1s infinite ease-in-out;
+  }
